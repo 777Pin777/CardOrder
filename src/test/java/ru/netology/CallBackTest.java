@@ -16,8 +16,8 @@ public class CallBackTest {
 
     @Test
     public void shouldCriticalPathTest() {
-        form.$("[data-test-id=name] input").setValue("Гагарин Юрий");
-        form.$("[data-test-id=phone] input").setValue("+79211234567");
+        form.$("[data-test-id=name] input").setValue("Михаил Петров");
+        form.$("[data-test-id=phone] input").setValue("+79212586947");
         form.$("[data-test-id=agreement]").click();
         form.$("button.button").click();
         $("[data-test-id=order-success]").shouldHave(
@@ -28,8 +28,8 @@ public class CallBackTest {
 
     @Test
     public void shouldValidNameTestTwo() {
-        form.$("[data-test-id=name] input").setValue("Ахмед ибн Абдуллах");
-        form.$("[data-test-id=phone] input").setValue("+79211234567");
+        form.$("[data-test-id=name] input").setValue("Магомаев Али Ибрагимович");
+        form.$("[data-test-id=phone] input").setValue("+79212586947");
         form.$("[data-test-id=agreement]").click();
         form.$("button.button").click();
         $("[data-test-id=order-success]").shouldHave(
@@ -49,8 +49,8 @@ public class CallBackTest {
 
     @Test
     public void shouldInvalidNameTestTwo() {
-        form.$("[data-test-id=name] input").setValue("+79211234567");
-        form.$("[data-test-id=phone] input").setValue("+79211234567");
+        form.$("[data-test-id=name] input").setValue("+79212586947");
+        form.$("[data-test-id=phone] input").setValue("+79212586947");
         form.$("[data-test-id=agreement]").click();
         form.$("button.button").click();
         form.$("[data-test-id=name].input_invalid .input__sub").shouldHave(
@@ -59,8 +59,8 @@ public class CallBackTest {
 
     @Test
     public void shouldInvalidPhoneTestOne() {
-        form.$("[data-test-id=name] input").setValue("Гагарин Юрий");
-        form.$("[data-test-id=phone] input").setValue("89211234567");
+        form.$("[data-test-id=name] input").setValue("Михаил Петров");
+        form.$("[data-test-id=phone] input").setValue("89212586947");
         form.$("[data-test-id=agreement]").click();
         form.$("button.button").click();
         form.$("[data-test-id=phone].input_invalid .input__sub").shouldHave(
@@ -70,8 +70,8 @@ public class CallBackTest {
 
     @Test
     public void shouldInvalidPhoneTestTwo() {
-        form.$("[data-test-id=name] input").setValue("Гагарин Юрий");
-        form.$("[data-test-id=phone] input").setValue("+792112345678");
+        form.$("[data-test-id=name] input").setValue("Михаил Петров");
+        form.$("[data-test-id=phone] input").setValue("+7929212586947");
         form.$("[data-test-id=agreement]").click();
         form.$("button.button").click();
         form.$("[data-test-id=phone].input_invalid .input__sub").shouldHave(
@@ -80,8 +80,8 @@ public class CallBackTest {
 
     @Test
     public void shouldInvalidPhoneTestThree() {
-        form.$("[data-test-id=name] input").setValue("Гагарин Юрий");
-        form.$("[data-test-id=phone] input").setValue("Samsung");
+        form.$("[data-test-id=name] input").setValue("Михаил Петров");
+        form.$("[data-test-id=phone] input").setValue("Opera");
         form.$("[data-test-id=agreement]").click();
         form.$("button.button").click();
         form.$("[data-test-id=phone].input_invalid .input__sub").shouldHave(
@@ -91,7 +91,7 @@ public class CallBackTest {
 
     @Test
     public void shouldEmptyCheckBoxTest() {
-        form.$("[data-test-id=name] input").setValue("Гагарин Юрий");
+        form.$("[data-test-id=name] input").setValue("Михаил Петров");
         form.$("[data-test-id=phone] input").setValue("+79211234567");
         form.$("button.button").click();
         form.$("[data-test-id=agreement]").should(cssClass("input_invalid"));
